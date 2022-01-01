@@ -1,7 +1,9 @@
-int x;
-int LED=13;
+// in this cod i just use python file send_data.py to turn on and off to arduino's led.
+
+int command;
 int red_led = 2;
 int green_led = 3;
+
 void setup() {
  pinMode(red_led, OUTPUT);
  pinMode(green_led, OUTPUT);                     
@@ -10,14 +12,15 @@ void setup() {
  Serial.begin(115200);
  Serial.setTimeout(1);
 }
+
 void loop() {
  while (!Serial.available());
- x = Serial.readString().toInt();
- if (x == 0){
+ command = Serial.readString().toInt();
+ if (command == 0){
   digitalWrite (red_led, HIGH);
   digitalWrite (green_led, LOW);
  }
- else if(x == 1){
+ else if(command == 1){
   digitalWrite (green_led, HIGH);
   digitalWrite (red_led, LOW);
  }
