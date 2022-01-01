@@ -1,4 +1,4 @@
-// in this cod i just use python file send_data.py to turn on and off to arduino's led.
+// in this cod  just use python file python_send_command.py to turn on and off to arduino's led.
 
 int command;
 int red_led = 2;
